@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 100px;
+  position:relative;
+}
+  body,
+h1 {
+    background-color: rgba(121, 68, 154, .13);
+    background-image: radial-gradient(circle at top right, rgba(121, 68, 154, .13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, .13), transparent);
+    margin: 0;
+    font-family: 'Carter One', cursive;
+    background-color: white
+}
+
+h1 {
+    font-size: 70px;
+    user-select: none
+}
+
+hr.first {
+    color: #1e90ff;
+    text-align: center;
+    border: none;
+    top: -.5em
+}
+div.first1 {
+  font-size: 30px;
+    user-select: none
+}
+
+</style>
+</head>
+<body>
+<div>
+  <center><h1 id="hq">
+  <div> <div id="top">Tic Tac Toe</div>... 
+    <button onclick="button()" class="btn btn-success btn-lg">NEW GAME</button>
+  </div></h1><hr class="first">
+<div id="flex" class="flex-container">
+  <div id="1" name="one">....</div>
+  <div id="2" name="two">....</div>
+  <div id="3" name="three">....</div>
+  <div id="4" name="four">....</div>
+  <div id="5" name="five">....</div>
+  <div id="6" name="six">....</div>
+  <div id="7" name="seven">....</div>
+  <div id="8" name="eight">....</div>
+  <div id="9" name="nine">....</div>
+  
+
+</div>
+<center>  
+
+<center><h1 id="hq">
+<div id="top1">  </div></h1><hr class="first">
+<!-- <button   class="btn btn-primary" id="two" >Score</button> -->
+<!-- <button type="submit" class="btn btn-danger" id="three">Clear Todo List </button> -->
+<!-- <div id="four"><p>your</p></div> -->
+</center>
+<div class="first1">
+<center>Developer:<a href="https://github.com/SahilKalkal">Sahil Kalkal</a></center>
+</div>
+  
+</div>
+
+<script type="text/javascript">
+  function darktheme() {
+    document.body.style.backgroundColor = "#000"
+}
+function button() {
+    location.reload()
+}
+  // var count=0;
+  // var count1=0;
+  var t=document.getElementById("top");
+  var t1=document.getElementById("top1");
+
+  var win=true;
+  var arr=[0]
+  var arr1=[0]
+  var turn=true; 
+  var arr2;
+  var c={
+    b1:true,
+    b2:true,
+    b3:true,
+    b4:true,
+    b5:true,
+    b6:true,
+    b7:true,
+    b8:true,
+    b9:true,
+  }
+  document.getElementById("flex").addEventListener('click',(x)=>{
+    var d=x.path[0].id;
+
+    function sahil()
+    {
+      if(turn == true)
+                 {
+                   document.getElementById(d).innerHTML = "X";
+                   turn=false;
+                 }
+                 else
+                  {
+                   document.getElementById(d).innerHTML = "O";
+                   turn=true;
+                 }
+    }
+    if(win)
+  {
+    if(d==1)
+    {
+      if(c.b1)
+            {
+                 sahil()
+                 c.b1=false;
+            }
+    }   
+    else if(d==2)
+    {
+      if(c.b2)
+            {
+                 sahil()
+                 c.b2=false;
+            }
+    }
+    else if(d==3)
+    {
+      if(c.b3)
+            {
+                 sahil()
+                 c.b3=false;
+            }
+    }
+    else if(d==4)
+    {
+      if(c.b4)
+            {
+                 sahil()
+                 c.b4=false;
+            }
+    }
+    else if(d==5)
+    {
+      if(c.b5)
+            {
+                 sahil()
+                 c.b5=false;
+            }
+    }
+    else if(d==6)
+    {
+      if(c.b6)
+            {
+                 sahil()
+                 c.b6=false;
+            }
+    }
+    else if(d==7)
+    {
+      if(c.b7)
+            {
+                 sahil()
+                 c.b7=false;
+            }
+    }
+    else if(d==8)
+    {
+      if(c.b8)
+            {
+                 sahil()
+                 c.b8=false;
+            }
+    }
+   else if(d==9)
+    {
+      if(c.b9)
+            {
+                 sahil()
+                 c.b9=false;
+            }
+    }
+  
+    var s=x.path[0].innerText;
+    var cm=s+d;
+    // console.log(cm)
+    arr.push(cm)
+   if(arr.indexOf("X1") >0 && arr.indexOf("X2") >0 && arr.indexOf("X3") >0||
+   arr.indexOf("X4") >0 && arr.indexOf("X5") >0 && arr.indexOf("X6") >0 ||
+   arr.indexOf("X7") >0 && arr.indexOf("X8") >0 &&arr.indexOf("X9") >0 ||
+   arr.indexOf("X1") >0 && arr.indexOf("X4") >0 && arr.indexOf("X7") >0 ||
+   arr.indexOf("X2") >0 && arr.indexOf("X5") >0 && arr.indexOf("X8") >0 ||
+   arr.indexOf("X3") >0 && arr.indexOf("X6") >0 && arr.indexOf("X9") >0 ||
+   arr.indexOf("X1") >0 && arr.indexOf("X5") >0 && arr.indexOf("X9") >0 ||
+   arr.indexOf("X3") >0 && arr.indexOf("X5") >0 && arr.indexOf("X7") >0  )
+   {
+    t.innerHTML="X wins the game"
+    t1.innerHTML="X wins the game"
+    arr1.push("X")
+    win=false;
+   }
+   else if(arr.indexOf("O1") >0 && arr.indexOf("O2") >0 && arr.indexOf("O3") >0||
+   arr.indexOf("O4") >0 && arr.indexOf("O5") >0 && arr.indexOf("O6") >0 ||
+   arr.indexOf("O7") >0 && arr.indexOf("O8") >0 &&arr.indexOf("O9") >0  ||
+   arr.indexOf("O1") >0 && arr.indexOf("O4") >0 && arr.indexOf("O7") >0 ||
+   arr.indexOf("O2") >0 && arr.indexOf("O5") >0 && arr.indexOf("O8") >0 ||
+   arr.indexOf("O3") >0 && arr.indexOf("O6") >0 && arr.indexOf("O9") >0 ||
+   arr.indexOf("O1") >0 && arr.indexOf("O5") >0 && arr.indexOf("O9") >0 ||
+   arr.indexOf("O3") >0 && arr.indexOf("O5") >0 && arr.indexOf("O7") >0  )
+   {
+    t.innerHTML = "O wins the game"
+    t1.innerHTML = "O wins the game"
+    arr1.push("O")
+    win=false;
+   }
+   if (c.b1 === false && c.b2 === false && c.b3 === false && c.b4 === false && c.b5 === false && c.b6 === false && c.b7 === false && c.b8 === false && c.b9 === false && win === true)
+    {
+        t.innerHTML = "!!!Match Draw!!!, Play Hard!!"
+        t1.innerHTML = "!!!Match Draw!!!, Play Hard!!"
+        arr1.push("D")
+        win = false
+    }
+ }
+
+})
+
+</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
