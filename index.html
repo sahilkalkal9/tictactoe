@@ -3,20 +3,27 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: white;
+.container{
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 2fr 2fr 2fr;
 }
 
-.flex-container > div {
-  background-color: #f1f1f1;
-  width: 300px;
-  margin: 10px;
-  text-align: center;
-  line-height: 150px;
-  font-size: 100px;
-  position:relative;
+.zone {
+    cursor:pointer;
+    /*display:inline-block;*/
+    text-align: center;
+    font-size:10em;
+    border-radius:4px;
+    border:1px solid #bbb;
+    transition: all 0.3s linear;
+}
+
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
 }
   body,
 h1 {
@@ -51,16 +58,17 @@ div.first1 {
   <div> <div id="top">Tic Tac Toe</div> 
     <button onclick="button()" class="btn btn-success btn-lg">NEW GAME</button>
   </div></h1><hr class="first">
-<div id="flex" class="flex-container">
-  <div id="1" name="one">.</div>
-  <div id="2" name="two">.</div>
-  <div id="3" name="three">.</div>
-  <div id="4" name="four">.</div>
-  <div id="5" name="five">.</div>
-  <div id="6" name="six">.</div>
-  <div id="7" name="seven">.</div>
-  <div id="8" name="eight">.</div>
-  <div id="9" name="nine">.</div>
+<div id="flex" class="container">
+ 
+  <div id="1" class="zone">1</div>
+	<div id="2" class="zone">2</div>
+	<div id="3" class="zone">3</div>
+	<div id="4" class="zone">4</div>
+	<div id="5" class="zone">5</div>
+	<div id="6" class="zone">6</div>
+	<div id="7" class="zone">7</div>
+	<div id="8" class="zone">8</div>
+	<div id="9" class="zone">9</div>
   
 
 </div>
