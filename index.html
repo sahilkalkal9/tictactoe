@@ -55,10 +55,10 @@ div.first1 {
 <body>
 <div>
   <center><h1 id="hq">
-	  <div> <div><h1>Tic Tac Toe</h1></div> 
+	  <div> <div class="top"><h1>Tic Tac Toe</h1></div> 
     <button onclick="button()" class="btn btn-success btn-lg">NEW GAME</button>
   </div></h1><hr class="first">
-	  <h1 class="cont">
+<!-- 	  <h1 class="cont"> -->
 <div id="flex" class="container">
  
   <div id="1" class="zone">🔒</div>
@@ -73,7 +73,7 @@ div.first1 {
   
 	
 </div>
-	  </h1>
+<!-- 	  </h1> -->
 <center>  
 
 <!-- <center><h1 id="hq"> -->
@@ -99,7 +99,7 @@ function button() {
 }
   // var count=0;
   // var count1=0;
-  var t=document.getElementsByClassName("cont");
+  var t=document.getElementsByClassName("top");
   var t1=document.getElementById("top1");
 
   var win=true;
@@ -223,7 +223,7 @@ function button() {
    arr.indexOf("X3") >0 && arr.indexOf("X5") >0 && arr.indexOf("X7") >0  )
    {
     t.innerHTML="X wins the game"
-//     t1.innerHTML="X wins the game"
+    t1.innerHTML="X wins the game"
     arr1.push("X")
     win=false;
    }
@@ -237,7 +237,7 @@ function button() {
    arr.indexOf("O3") >0 && arr.indexOf("O5") >0 && arr.indexOf("O7") >0  )
    {
     t.innerHTML = "O wins the game"
-//     t1.innerHTML = "O wins the game"
+    t1.innerHTML = "O wins the game"
     arr1.push("O")
     win=false;
    }
